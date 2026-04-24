@@ -18,7 +18,7 @@ const Nav = () => (
   <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4">
     <div className="max-w-7xl mx-auto glass rounded-2xl px-6 py-3 flex items-center justify-between">
       <div className="flex items-center gap-2">
-        <div className="w-8 h-8 bg-pink-500 rounded-lg flex items-center justify-center">
+        <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: 'var(--sakura-red)' }}>
           <ShieldCheck className="text-white w-5 h-5" />
         </div>
         <span className="font-bold text-xl tracking-tight">NewsGuard</span>
@@ -30,7 +30,7 @@ const Nav = () => (
 const FeatureCard = ({ icon: Icon, title, description }) => (
   <div className="glass glass-hover p-6 rounded-2xl flex flex-col gap-4">
     <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center border border-white/10">
-      <Icon className="text-pink-400 w-6 h-6" />
+      <Icon style={{ color: 'var(--sakura-red)' }} className="w-6 h-6" />
     </div>
     <div>
       <h3 className="text-lg font-semibold mb-2">{title}</h3>
@@ -86,7 +86,7 @@ function App() {
             className="inline-block"
           >
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-4">
-              Fake News <span className="text-pink-500">Detector</span>
+              Fake News <span style={{ color: 'var(--sakura-red)' }}>Detector</span>
             </h1>
             <p className="text-xl md:text-2xl text-slate-400 font-light max-w-2xl mx-auto">
               A Machine Learning powered engine for <span className="text-white">detecting misinformation</span>
@@ -122,7 +122,7 @@ function App() {
             className="glass p-8 rounded-3xl space-y-6"
           >
             <div className="flex items-center gap-3 border-b border-white/10 pb-6">
-              <MessageSquare className="text-pink-400 w-6 h-6" />
+              <MessageSquare style={{ color: 'var(--sakura-red)' }} className="w-6 h-6" />
               <h2 className="text-2xl font-bold">Inference Engine</h2>
             </div>
 
@@ -191,7 +191,7 @@ function App() {
                       </div>
                       <div className="text-center">
                         <p className="text-xs text-slate-600 uppercase font-bold mb-1">Status</p>
-                        <div className="flex items-center gap-2 text-pink-400 font-medium">
+                        <div className="flex items-center gap-2" style={{ color: 'var(--sakura-red)' }}>
                           <ShieldCheck className="w-4 h-4" />
                           {result.llm_verified ? 'LLM Verified' : 'ML Inferred'}
                         </div>
@@ -250,7 +250,7 @@ function App() {
         <footer className="text-center pt-10">
           <p className="text-xs text-slate-600 max-w-2xl mx-auto leading-relaxed">
             <AlertCircle className="inline-block w-3 h-3 mr-1" />
-            The Fake News Detector may be incorrect. Always verify critical predictions with domain experts. This system provides probabilistic estimates, not certainties.
+
           </p>
         </footer>
       </div>

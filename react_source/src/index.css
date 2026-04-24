@@ -6,6 +6,8 @@
   line-height: 1.5;
   font-weight: 400;
 
+  --sakura-red: #ff2d55;
+
   color-scheme: dark;
   color: #e2e8f0;
   background-color: #050505;
@@ -53,7 +55,7 @@ body {
 }
 
 .button-primary {
-  background: #ec4899;
+  background: var(--sakura-red);
   color: white;
   border: none;
   padding: 0.8rem 1.5rem;
@@ -64,7 +66,7 @@ body {
 }
 
 .button-primary:hover {
-  background: #f472b6;
+  filter: brightness(1.1);
   transform: translateY(-1px);
 }
 
