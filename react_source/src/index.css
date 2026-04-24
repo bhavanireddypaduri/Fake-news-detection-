@@ -21,8 +21,7 @@ body {
   display: flex;
   min-width: 320px;
   min-height: 100vh;
-  background: radial-gradient(circle at top left, #2d101e 0%, #000000 60%),
-              radial-gradient(circle at bottom right, #2d101e 0%, #000000 60%);
+  background-color: #000000;
   background-attachment: fixed;
 }
 
@@ -31,11 +30,8 @@ body {
 }
 
 .glass {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .glass-hover:hover {
@@ -57,20 +53,19 @@ body {
 }
 
 .button-primary {
-  background: linear-gradient(135deg, #f472b6 0%, #ec4899 100%);
+  background: #ec4899;
   color: white;
   border: none;
   padding: 0.8rem 1.5rem;
-  border-radius: 8px;
+  border-radius: 4px;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
+  transition: all 0.2s ease;
 }
 
 .button-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(236, 72, 153, 0.4);
+  background: #f472b6;
+  transform: translateY(-1px);
 }
 
 .button-secondary {

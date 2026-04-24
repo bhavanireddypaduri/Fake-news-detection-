@@ -18,7 +18,7 @@ const Nav = () => (
   <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4">
     <div className="max-w-7xl mx-auto glass rounded-2xl px-6 py-3 flex items-center justify-between">
       <div className="flex items-center gap-2">
-        <div className="w-8 h-8 bg-gradient-to-br from-pink-500 to-pink-600 rounded-lg flex items-center justify-center">
+        <div className="w-8 h-8 bg-pink-500 rounded-lg flex items-center justify-center">
           <ShieldCheck className="text-white w-5 h-5" />
         </div>
         <span className="font-bold text-xl tracking-tight">NewsGuard</span>
@@ -86,10 +86,10 @@ function App() {
             className="inline-block"
           >
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-4">
-              Fake News <span className="accent-gradient">Detector</span>
+              Fake News <span className="text-pink-500">Detector</span>
             </h1>
             <p className="text-xl md:text-2xl text-slate-400 font-light max-w-2xl mx-auto">
-              A Machine Learning powered engine for <span className="text-white">detecting misinformation.</span>
+              A Machine Learning powered engine for <span className="text-white">detecting misinformation</span>
             </p>
           </motion.div>
 
