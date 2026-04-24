@@ -21,20 +21,20 @@ const Nav = () => (
         <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center">
           <ShieldCheck className="text-white w-5 h-5" />
         </div>
-        <span className="font-bold text-xl tracking-tight">SAMBHAV</span>
+        <span className="font-bold text-xl tracking-tight">NewsGuard</span>
       </div>
       
       <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
         <a href="#" className="hover:text-white transition-colors">Home</a>
-        <a href="#" className="hover:text-white transition-colors">Predict</a>
-        <a href="#" className="hover:text-white transition-colors">Fact Check</a>
-        <a href="#" className="hover:text-white transition-colors">Calibrate</a>
+        <a href="#" className="hover:text-white transition-colors">Analyze</a>
+        <a href="#" className="hover:text-white transition-colors">Methodology</a>
+        <a href="#" className="hover:text-white transition-colors">API</a>
         <a href="#" className="hover:text-white transition-colors">About</a>
       </div>
 
       <button className="button-secondary text-sm py-2 px-4 flex items-center gap-2">
-        <ChevronRight className="w-4 h-4" />
-        Logout
+        <ExternalLink className="w-4 h-4" />
+        Documentation
       </button>
     </div>
   </nav>
@@ -99,10 +99,10 @@ function App() {
             className="inline-block"
           >
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-4">
-              Project <span className="accent-gradient">Sambhav</span>
+              Fake News <span className="accent-gradient">Detector</span>
             </h1>
             <p className="text-xl md:text-2xl text-slate-400 font-light max-w-2xl mx-auto">
-              A Multi-Modal Probabilistic Inference Engine for <span className="text-white">Uncertainty, Quantified.</span>
+              A Machine Learning powered engine for <span className="text-white">detecting misinformation.</span>
             </p>
           </motion.div>
 
@@ -112,7 +112,7 @@ function App() {
             transition={{ delay: 0.2 }}
             className="text-slate-500 max-w-xl mx-auto text-sm md:text-base leading-relaxed"
           >
-            A research-grade AI framework that transforms complex predictions into calibrated probabilities. Make better decisions with transparent uncertainty quantification.
+            Built with advanced NLP techniques and verified by LLM intelligence to ensure high accuracy and provide transparent confidence scoring for every news article.
           </motion.p>
 
           <div className="flex flex-wrap justify-center gap-4 pt-4">
@@ -120,7 +120,7 @@ function App() {
               onClick={() => document.getElementById('analyze').scrollIntoView({ behavior: 'smooth' })}
               className="button-primary px-8 py-3 flex items-center gap-2"
             >
-              Start Predicting <ChevronRight className="w-4 h-4" />
+              Start Analyzing <ChevronRight className="w-4 h-4" />
             </button>
             <button className="button-secondary px-8 py-3">Learn More</button>
           </div>
@@ -232,30 +232,30 @@ function App() {
         {/* Feature Grid */}
         <section className="space-y-12">
           <div className="text-center">
-            <h2 className="text-3xl font-bold mb-4">Premium Research Framework</h2>
-            <p className="text-slate-500">Built for professionals who need precision and transparency</p>
+            <h2 className="text-3xl font-bold mb-4">Core Detection Features</h2>
+            <p className="text-slate-500">Built for accuracy, speed, and complete transparency</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <FeatureCard 
-              icon={Zap}
-              title="Multi-Modal Intelligence"
-              description="Process text, images, video, and documents with unified probabilistic reasoning."
-            />
-            <FeatureCard 
               icon={Activity}
-              title="Calibrated Uncertainty"
-              description="Get precise confidence intervals and uncertainty quantification for every prediction."
+              title="ML Classification"
+              description="Fast text processing using TF-IDF and scikit-learn for baseline probability."
             />
             <FeatureCard 
               icon={ShieldCheck}
-              title="Adversarial Testing"
-              description="Stress-test your predictions with built-in adversarial mode to ensure robustness."
+              title="LLM Verification"
+              description="Secondary opinion from Groq LLM on low confidence or uncertain results."
             />
             <FeatureCard 
               icon={Zap}
-              title="Real-Time Monitoring"
-              description="Track prediction accuracy over time with continuous performance metrics."
+              title="Instant Analysis"
+              description="Process full length news articles in milliseconds to get immediate results."
+            />
+            <FeatureCard 
+              icon={Info}
+              title="Confidence Scoring"
+              description="Get precise confidence intervals with every prediction for complete transparency."
             />
           </div>
         </section>
@@ -263,7 +263,7 @@ function App() {
         <footer className="text-center pt-10">
           <p className="text-xs text-slate-600 max-w-2xl mx-auto leading-relaxed">
             <AlertCircle className="inline-block w-3 h-3 mr-1" />
-            Sambhav may be incorrect. Always verify critical predictions with domain experts. This system provides probabilistic estimates, not certainties.
+            The Fake News Detector may be incorrect. Always verify critical predictions with domain experts. This system provides probabilistic estimates, not certainties.
           </p>
         </footer>
       </div>
