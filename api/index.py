@@ -19,7 +19,7 @@ from predict import predict, load_model
 from feature_extraction import load_vectorizer
 
 # Point Flask to the root directory for templates and static files
-app = Flask(__name__, template_folder='../', static_folder='../')
+app = Flask(__name__, template_folder='../', static_folder='../', static_url_path='/')
 
 # BASE_DIR is the root of the project
 BASE_DIR    = parent_dir
