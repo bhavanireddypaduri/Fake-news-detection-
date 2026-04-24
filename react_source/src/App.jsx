@@ -23,19 +23,6 @@ const Nav = () => (
         </div>
         <span className="font-bold text-xl tracking-tight">NewsGuard</span>
       </div>
-      
-      <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
-        <a href="#" className="hover:text-white transition-colors">Home</a>
-        <a href="#" className="hover:text-white transition-colors">Analyze</a>
-        <a href="#" className="hover:text-white transition-colors">Methodology</a>
-        <a href="#" className="hover:text-white transition-colors">API</a>
-        <a href="#" className="hover:text-white transition-colors">About</a>
-      </div>
-
-      <button className="button-secondary text-sm py-2 px-4 flex items-center gap-2">
-        <ExternalLink className="w-4 h-4" />
-        Documentation
-      </button>
     </div>
   </nav>
 );
