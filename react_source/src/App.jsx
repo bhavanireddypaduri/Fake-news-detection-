@@ -18,7 +18,7 @@ const Nav = () => (
   <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4">
     <div className="max-w-7xl mx-auto glass rounded-2xl px-6 py-3 flex items-center justify-between">
       <div className="flex items-center gap-2">
-        <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center">
+        <div className="w-8 h-8 bg-gradient-to-br from-pink-500 to-pink-600 rounded-lg flex items-center justify-center">
           <ShieldCheck className="text-white w-5 h-5" />
         </div>
         <span className="font-bold text-xl tracking-tight">NewsGuard</span>
@@ -30,7 +30,7 @@ const Nav = () => (
 const FeatureCard = ({ icon: Icon, title, description }) => (
   <div className="glass glass-hover p-6 rounded-2xl flex flex-col gap-4">
     <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center border border-white/10">
-      <Icon className="text-indigo-400 w-6 h-6" />
+      <Icon className="text-pink-400 w-6 h-6" />
     </div>
     <div>
       <h3 className="text-lg font-semibold mb-2">{title}</h3>
@@ -122,7 +122,7 @@ function App() {
             className="glass p-8 rounded-3xl space-y-6"
           >
             <div className="flex items-center gap-3 border-b border-white/10 pb-6">
-              <MessageSquare className="text-indigo-400 w-6 h-6" />
+              <MessageSquare className="text-pink-400 w-6 h-6" />
               <h2 className="text-2xl font-bold">Inference Engine</h2>
             </div>
 
@@ -131,7 +131,7 @@ function App() {
                 value={text}
                 onChange={(e) => setText(e.target.value)}
                 placeholder="Paste your news article or text here for deep probabilistic analysis..."
-                className="w-100 min-h-[200px] bg-black/40 border border-white/10 rounded-2xl p-6 text-slate-200 placeholder:text-slate-600 focus:outline-none focus:border-indigo-500/50 transition-all resize-none"
+                className="w-100 min-h-[200px] bg-black/40 border border-white/10 rounded-2xl p-6 text-slate-200 placeholder:text-slate-600 focus:outline-none focus:border-pink-500/50 transition-all resize-none"
                 style={{ width: '100%' }}
               />
               
@@ -191,7 +191,7 @@ function App() {
                       </div>
                       <div className="text-center">
                         <p className="text-xs text-slate-600 uppercase font-bold mb-1">Status</p>
-                        <div className="flex items-center gap-2 text-indigo-400 font-medium">
+                        <div className="flex items-center gap-2 text-pink-400 font-medium">
                           <ShieldCheck className="w-4 h-4" />
                           {result.llm_verified ? 'LLM Verified' : 'ML Inferred'}
                         </div>

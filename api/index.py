@@ -18,8 +18,8 @@ from flask import Flask, render_template, request, jsonify
 from predict import predict, load_model
 from feature_extraction import load_vectorizer
 
-# Point Flask to the root directory for templates and static files
-app = Flask(__name__, template_folder='../', static_folder='../', static_url_path='/')
+# Point Flask to the root directory for static files
+app = Flask(__name__, static_folder='../', static_url_path='')
 
 # BASE_DIR is the root of the project
 BASE_DIR    = parent_dir
@@ -82,7 +82,7 @@ def get_artifacts():
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return app.send_static_file('index.html')
 
 @app.route('/predict', methods=['POST'])
 def predict_route():
