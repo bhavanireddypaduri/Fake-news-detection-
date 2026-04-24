@@ -2,19 +2,35 @@
 preprocessing.py - Text cleaning and preprocessing utilities
 """
 
+import os
 import re
 import nltk
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
 
-# Download required NLTK resources
-nltk.download('stopwords', quiet=True)
-nltk.download('punkt', quiet=True)
-nltk.download('punkt_tab', quiet=True)
+# On Vercel (and other read-only serverless envs), only /tmp is writable.
+# Set NLTK data path to /tmp so downloads succeed at runtime.
+_NLTK_DATA_DIR = "/tmp/nltk_data"
+os.makedirs(_NLTK_DATA_DIR, exist_ok=True)
+nltk.data.path.insert(0, _NLTK_DATA_DIR)
+
+# Download required NLTK resources into /tmp
+nltk.download('stopwords', download_dir=_NLTK_DATA_DIR, quiet=True)
+nltk.download('punkt',     download_dir=_NLTK_DATA_DIR, quiet=True)
+nltk.download('punkt_tab', download_dir=_NLTK_DATA_DIR, quiet=True)
+
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
 
 stemmer = PorterStemmer()
 stop_words = set(stopwords.words('english'))
+
+
+def _safe_tokenize(text: str):
+    """word_tokenize with fallback to simple split if punkt is unavailable."""
+    try:
+        return word_tokenize(text)
+    except Exception:
+        return text.split()
 
 
 def clean_text(text: str) -> str:
@@ -44,7 +60,7 @@ def clean_text(text: str) -> str:
     text = re.sub(r'[^a-z\s]', '', text)
 
     # 5. Tokenise
-    tokens = word_tokenize(text)
+    tokens = _safe_tokenize(text)
 
     # 6. Remove stopwords and very short tokens, then stem
     # Also remove known journalist boilerplate words that are stylistic, not semantic
